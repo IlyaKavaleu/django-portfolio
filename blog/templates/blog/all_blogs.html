@@ -1,0 +1,21 @@
+{% extends 'portfolio/base.html' %}
+
+
+{% block content %}
+<div class="container">
+<body>
+<p class="text-align:center;"><h2>Ilia has written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h2></p>
+<div>
+{% for blog in blogs %}
+<a href="{% url 'blog:detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
+    <p>{{ blog.description|striptags|truncatechars:100 }}</p>
+    <p>{{ blog.date|date:'M d Y'|upper }}</p>
+{% endfor %}
+</div>
+
+<div class="container-center"> <button id="popoverButton" type="button" class="btn btn-primary btn-lg" data-bs-toggle="popover" title="ESM in Browser" data-bs-content="Hello, bro! This is my blog! You can read interesting you topics!">Click here!</button>
+</div>
+
+</body>
+</div>
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends 'portfolio/base.html' %}
+
+
+{% block content %}
+<body>
+<div class="container">
+    <center><h2>Ilia has written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h2></center>
+
+    <h1>About this site</h1>
+    <ul>
+        <li>Responsiveness</li>
+        <li>Politeness</li>
+        <li>Ability to easily connect with people</li>
+        <li>Self confidence</li>
+        <li>Ability to easily maintain business and professional contacts</li>
+        <li>Ability to prioritize</li>
+        <li>Optimism</li>
+        <li>Active life position</li>
+        <li>Ability to achieve goals</li>
+        <li>Ability to effectively plan your time</li>
+        <li>Creative thinking</li>
+        <li>systems thinking</li>
+        <li>Attention to details</li>
+        <li>Willingness to make decisions independently</li>
+        <li>Skill to work in team</li>
+        <li>Commitment to professional development</li>
+        <li>Initiative</li>
+    </ul>
+</div>
+</body>
+{% endblock content %}

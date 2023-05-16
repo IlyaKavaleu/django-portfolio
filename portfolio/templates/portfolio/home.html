@@ -1,0 +1,28 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+
+<div class="container">
+{% load static %}
+    <center>
+        <p style="text-align: center"><h1>Ilia's Portfolio</h1></p>
+    </center>
+    <center>
+        <img src="{% static 'portfolio/me_new.png' %}" width=900 height=1100>
+    </center>
+    <br>
+    {% for project in projects %}
+    <div><center><h2>{{ project.title }}</h2>
+    <p>{{ project.description }}</p>
+        <div class="row justify-content-center mb-3">
+            <div class="col-md-9 text-center">
+            <img src="{{ project.image.url }}" width=500 height=350></div>
+        </div>
+    <p>{{ project.date }}</p>
+    {% if project.url %}
+        <h3><a href="{{ project.url }}">Link</a></h3>
+    </center></div>
+    <br><br>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endblock content %}
