@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-o8k)ci8p_)8_7c)@wb4jklx!1-afur16ipu=x@b1ol(-1=zwgd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['codeninjacode1.pythonanywhere.com']
 
 
 # Application definition
@@ -127,3 +127,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 GIT_TEST_DEBUG_UNSAFE_DIRECTORIES = True
+
+try:
+    from .local_settings import *
+except ImportError:
+    print("Looks like no local file. You must be on production")
